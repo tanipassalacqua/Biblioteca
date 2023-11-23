@@ -1,0 +1,39 @@
+-- Crear la base de datos
+CREATE DATABASE Biblioteca;
+
+-- Usar la base de datos
+USE Biblioteca;
+
+-- Crear la tabla Carreras
+CREATE TABLE Carreras (
+    IDCarrera INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(70) NOT NULL
+);
+
+-- Crear la tabla Alumnos
+CREATE TABLE Alumnos (
+    Legajo INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(70) NOT NULL,
+    Apellido VARCHAR(70) NOT NULL,
+    FechaCumpleanios DATE NOT NULL,
+    Edad TINYINT NOT NULL,
+    Email VARCHAR(90) NOT NULL,
+    IDCarrera INT NOT NULL,
+    FOREIGN KEY (IDCarrera) REFERENCES Carreras(IDCarrera)
+);
+
+-- Crear la tabla Genero
+CREATE TABLE Genero (
+    IDGenero INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(70) NOT NULL
+);
+
+-- Crear la tabla Libros
+CREATE TABLE Libros (
+    IDLibro INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(100) NOT NULL,
+	Autor varchar(100),
+    IDGenero INT NOT NULL,
+    Estado BOOLEAN NOT NULL,
+    FOREIGN KEY (IDGenero) REFERENCES Genero(IDGenero)
+);
