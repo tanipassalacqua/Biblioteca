@@ -54,6 +54,7 @@ public class Application {
         libro.setNombre("Harry Potter y la camara secreta");
         libro.setIdGenero(genero.getIDGenero());
         libro.setEstado(true);
+        libro.setAutor("J. K. Rowling");
         libroDAO.create(libro);
         System.out.println("Libro successfully created: "+libro);
 

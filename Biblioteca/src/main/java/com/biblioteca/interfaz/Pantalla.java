@@ -94,8 +94,8 @@ public class Pantalla extends javax.swing.JFrame {
                 }
                 alumnoDAO.create(student);
                 System.out.println("Estudiante creado con éxito!");
-                // PantallaListado listadoLibros = new PantallaListado(); // Crea una nueva instancia de la otra pantalla
-                // listadoLibros.setVisible(true);
+                PantallaListado listado = new PantallaListado();
+                listado.setVisible(true);
                 setVisible(false);
             };
         });
