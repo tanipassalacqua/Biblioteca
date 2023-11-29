@@ -42,20 +42,6 @@ public class Application {
         carrerasDAO.create(carreras);
         System.out.println("Carreras was succesfully obtained: "+carreras);
 
-        // Create alumno.
-        Alumno alumno = new Alumno();
-        alumno.setNombre("Tania");
-        alumno.setApellido("Passalacqua");
-        try {
-            alumno.setFechaCumpleanios(new SimpleDateFormat("dd-MM-yyyy").parse("28-01-2004"));
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-        alumno.setEmail("tanipassalacqua@gmail.com");
-        alumno.setIdCarrera(carreras.getIDCarrera());
-        alumno.setEdad(19);
-        alumnoDAO.create(alumno);
-        System.out.println("Alumno successfully created:"+alumno);
 
         //Create Genero.
         Genero genero = new Genero();
@@ -73,7 +59,7 @@ public class Application {
 
         //Create Ticket
         Ticket ticket = new Ticket();
-        ticket.setLegajo(alumno.getLegajo());
+        // ticket.setLegajo(alumno.getLegajo());
         ticket.setIdLibro(libro.getIdLibro());
         try{
         ticket.setFechaPrestamo(new SimpleDateFormat("dd-MM-yyyy").parse("28-01-2004"));
